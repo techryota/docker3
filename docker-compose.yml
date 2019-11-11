@@ -22,12 +22,17 @@ services:
       context: .
       dockerfile: ./mysql/Dockerfile
     ports:
-      - '3306:3306'
+      - '4306:3306'
     volumes:
       - db_data:/var/lib/mysql
     extends:
       file: ./mysql/password.yml
       service: password
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=docker3_development
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
 
 volumes:
   db_data:
