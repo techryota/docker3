@@ -6,6 +6,11 @@ class User < ApplicationRecord
 
   has_many :groups
   has_many :messages
+  has_many :good_evaluations
   
   mount_uploader :image, ImageUploader
+
+  def good_evaluation_count
+    self.good_evaluations.count
+  end
 end

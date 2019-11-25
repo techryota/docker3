@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_15_232524) do
+ActiveRecord::Schema.define(version: 2019_11_23_012029) do
 
   create_table "counts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "ball1"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2019_11_15_232524) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_counts_on_group_id"
     t.index ["user_id"], name: "index_counts_on_user_id"
+  end
+
+  create_table "good_evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "evaluate_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["evaluate_user_id"], name: "index_good_evaluations_on_evaluate_user_id"
+    t.index ["user_id"], name: "index_good_evaluations_on_user_id"
   end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -109,6 +118,8 @@ ActiveRecord::Schema.define(version: 2019_11_15_232524) do
 
   add_foreign_key "counts", "groups"
   add_foreign_key "counts", "users"
+  add_foreign_key "good_evaluations", "users"
+  add_foreign_key "good_evaluations", "users", column: "evaluate_user_id"
   add_foreign_key "groups", "users"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
