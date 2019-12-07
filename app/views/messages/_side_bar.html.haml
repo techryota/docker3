@@ -1,0 +1,90 @@
+- if @counts.present?
+  .ball-view
+    - @counts.each do |count|
+      - if count.ball1 == 0
+        .ball-emptiness
+        .ball-emptiness
+        .ball-emptiness
+        .ball-emptiness
+      - elsif count.ball2 == 0
+        .ball
+        .ball-emptiness
+        .ball-emptiness
+        .ball-emptiness
+      - elsif count.ball3 == 0
+        .ball
+        .ball
+        .ball-emptiness
+        .ball-emptiness
+      - elsif count.ball4 == 0
+        .ball
+        .ball
+        .ball
+        .ball-emptiness
+      - else
+        .ball
+        .ball
+        .ball
+        .ball
+
+  .strike-view
+    - @counts.each do |count|
+      - if count.strike1 == 0
+        .strike-emptiness
+        .strike-emptiness
+        .strike-emptiness
+      - elsif count.strike2 == 0
+        .strike
+        .strike-emptiness
+        .strike-emptiness
+      - elsif count.strike3 == 0
+        .strike
+        .strike
+        .strike-emptiness
+      - else 
+        .strike
+        .strike
+        .strike
+
+  .auto-view
+    - @counts.each do |count|
+      - if count.auto1 == 0
+        .auto-emptiness
+        .auto-emptiness
+        .auto-emptiness
+      - elsif count.auto2 == 0
+        .auto
+        .auto-emptiness
+        .auto-emptiness
+      - elsif count.auto3 == 0
+        .auto
+        .auto
+        .auto-emptiness
+      - else 
+        .auto
+        .auto
+        .auto
+
+  .text-area
+    - @counts.each do |count|
+      %p 速報
+      = count.report
+- else
+  .ball-view
+    .ball-emptiness
+    .ball-emptiness
+    .ball-emptiness
+    .ball-emptiness
+
+  .strike-view
+    .strike-emptiness
+    .strike-emptiness
+    .strike-emptiness
+
+  .auto-view
+    .auto-emptiness
+    .auto-emptiness
+    .auto-emptiness
+
+= link_to '更新する', new_group_message_path(@group)
+= link_to '一覧に戻る', root_path

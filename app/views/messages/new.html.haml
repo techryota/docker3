@@ -1,0 +1,286 @@
+.form-score
+  - if @scores.present?
+    - @scores.each do |score|
+      = form_for [@group, @score] do |f|
+        %table.table-score
+          %tr
+            %th 
+            %th 1
+            %th 2
+            %th 3
+            %th 4
+            %th 5
+            %th 6
+            %th 7
+            %th 8
+            %th 9
+            %th 10
+            %th 11
+            %th 12
+            %th H
+            %th E
+          %tr
+            %td 
+              = f.text_field :first_team, value: score.first_team
+            %td 
+              = f.number_field :first1, class: "input-team", min: "0", value: score.first1
+            %td 
+              = f.number_field :first2, class: "input-team", min: "0", value: score.first2
+            %td 
+              = f.number_field :first3, class: "input-team", min: "0", value: score.first3
+            %td 
+              = f.number_field :first4, class: "input-team", min: "0", value: score.first4
+            %td 
+              = f.number_field :first5, class: "input-team", min: "0", value: score.first5
+            %td 
+              = f.number_field :first6, class: "input-team", min: "0", value: score.first6
+            %td 
+              = f.number_field :first7, class: "input-team", min: "0", value: score.first7
+            %td 
+              = f.number_field :first8, class: "input-team", min: "0", value: score.first8
+            %td 
+              = f.number_field :first9, class: "input-team", min: "0", value: score.first9
+            %td 
+              = f.number_field :first10, class: "input-team", min: "0", value: score.first10
+            %td 
+              = f.number_field :first11, class: "input-team", min: "0", value: score.first11
+            %td 
+              = f.number_field :first12, class: "input-team", min: "0", value: score.first12
+            %td 
+              = f.number_field :first_hit, class: "input-team", min: "0", value: score.first_hit
+            %td 
+              = f.number_field :first_error, class: "input-team", min: "0", value: score.first_error
+          %tr
+            %td 
+              = f.text_field :second_team, value: score.second_team
+            %td 
+              = f.number_field :second1, class: "input-team", min: "0", value: score.second1
+            %td 
+              = f.number_field :second2, class: "input-team", min: "0", value: score.second2
+            %td 
+              = f.number_field :second3, class: "input-team", min: "0", value: score.second3
+            %td 
+              = f.number_field :second4, class: "input-team", min: "0", value: score.second4
+            %td 
+              = f.number_field :second5, class: "input-team", min: "0", value: score.second5
+            %td 
+              = f.number_field :second6, class: "input-team", min: "0", value: score.second6
+            %td 
+              = f.number_field :second7, class: "input-team", min: "0", value: score.second7
+            %td 
+              = f.number_field :second8, class: "input-team", min: "0", value: score.second8
+            %td 
+              = f.number_field :second9, class: "input-team", min: "0", value: score.second9
+            %td 
+              = f.number_field :second10, class: "input-team", min: "0", value: score.second10
+            %td 
+              = f.number_field :second11, class: "input-team", min: "0", value: score.second11
+            %td 
+              = f.number_field :second12, class: "input-team", min: "0", value: score.second12
+            %td 
+              = f.number_field :second_hit, class: "input-team", min: "0", value: score.second_hit
+            %td 
+              = f.number_field :second_error, class: "input-team", min: "0", value: score.second_error
+          = f.submit 'Send', class: 'form__submit'
+  - else
+    = form_for [@group, @score] do |f|
+      %table.table-score
+        %tr
+          %th 
+          %th 1
+          %th 2
+          %th 3
+          %th 4
+          %th 5
+          %th 6
+          %th 7
+          %th 8
+          %th 9
+          %th 10
+          %th 11
+          %th 12
+          %th H
+          %th E
+        %tr
+          %td 
+            = f.text_field :first_team
+          %td 
+            = f.number_field :first1, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first2, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first3, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first4, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first5, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first6, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first7, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first8, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first9, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first10, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first11, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first12, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first_hit, class: "input-team", min: "0"
+          %td 
+            = f.number_field :first_error, class: "input-team", min: "0"
+        %tr
+          %td 
+            = f.text_field :second_team
+          %td 
+            = f.number_field :second1, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second2, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second3, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second4, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second5, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second6, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second7, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second8, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second9, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second10, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second11, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second12, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second_hit, class: "input-team", min: "0"
+          %td 
+            = f.number_field :second_error, class: "input-team", min: "0"
+        = f.submit 'Send', class: 'form__submit'
+
+.form-count
+  = form_for [@group, @count] do |f|
+    = f.label :ball1 ,"ball1"
+    = f.check_box :ball1, {class: "ball"}
+
+    = f.label :ball2 ,"ball2"
+    = f.check_box :ball2, {class: "ball"}
+
+    = f.label :ball3 ,"ball3"
+    = f.check_box :ball3, {class: "ball"}
+
+    = f.label :ball4 ,"ball4"
+    = f.check_box :ball4, {class: "ball"}
+
+    = f.label :strike1 ,"strike1"
+    = f.check_box :strike1, {class: "strike"}
+
+    = f.label :strike2 ,"strike2"
+    = f.check_box :strike2, {class: "strike"}
+
+    = f.label :strike3 ,"strike3"
+    = f.check_box :strike3, {class: "strike"}
+
+    = f.label :auto1 ,"auto1"
+    = f.check_box :auto1, {class: "auto"}
+
+    = f.label :auto2 ,"auto2"
+    = f.check_box :auto2, {class: "auto"}
+
+    = f.label :auto3 ,"auto3"
+    = f.check_box :auto3, {class: "auto"}
+
+    = f.text_area :report
+    = f.submit 'Send', class: 'form__submit'
+
+
+.count-view
+  - @counts.each do |count|
+    - if count.ball1 == 0
+      .ball-emptiness
+      .ball-emptiness
+      .ball-emptiness
+      .ball-emptiness
+    - elsif count.ball2 == 0
+      .ball
+      .ball-emptiness
+      .ball-emptiness
+      .ball-emptiness
+    - elsif count.ball3 == 0
+      .ball
+      .ball
+      .ball-emptiness
+      .ball-emptiness
+    - elsif count.ball4 == 0
+      .ball
+      .ball
+      .ball
+      .ball-emptiness
+    - else
+      .ball
+      .ball
+      .ball
+      .ball
+
+  - @counts.each do |count|
+    - if count.strike1 == 0
+      .strike-emptiness
+      .strike-emptiness
+      .strike-emptiness
+    - elsif count.strike2 == 0
+      .strike
+      .strike-emptiness
+      .strike-emptiness
+    - elsif count.strike3 == 0
+      .strike
+      .strike
+      .strike-emptiness
+    - else 
+      .strike
+      .strike
+      .strike
+
+  - @counts.each do |count|
+    - if count.auto1 == 0
+      .auto-emptiness
+      .auto-emptiness
+      .auto-emptiness
+    - elsif count.auto2 == 0
+      .auto
+      .auto-emptiness
+      .auto-emptiness
+    - elsif count.auto3 == 0
+      .auto
+      .auto
+      .auto-emptiness
+    - else 
+      .auto
+      .auto
+      .auto
+
+.chat-new
+  .header-new
+    .left-header-new
+      .left-header__title--new
+        = @group.name
+      %ul.left-header__members--new
+        作成者：
+        = @user.name
+    =link_to 'Edit', edit_group_path(@group), class: "right-header right-header__button", data: {turbolinks: false}
+  .messages-new
+    = render @messages
+  .form-new
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form-new__message--new', placeholder: 'type a message'
+      .form-new__mask--new
+        = f.label :image, class: 'form-new__mask__image--new' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form-new__submit--new'
