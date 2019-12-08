@@ -1,4 +1,4 @@
 = @user.name
 = form_for [@user, @good_evaluation] do |f|
-  = f.number_field :user_id
+  = f.check_box :good
   = f.submit 'Send'
