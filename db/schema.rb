@@ -33,11 +33,12 @@ ActiveRecord::Schema.define(version: 2019_11_23_012029) do
   end
 
   create_table "good_evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "good"
     t.bigint "user_id"
-    t.bigint "evaluate_user_id"
+    t.bigint "evaluate_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["evaluate_user_id"], name: "index_good_evaluations_on_evaluate_user_id"
+    t.index ["evaluate_id"], name: "index_good_evaluations_on_evaluate_id"
     t.index ["user_id"], name: "index_good_evaluations_on_user_id"
   end
 
@@ -49,6 +50,15 @@ ActiveRecord::Schema.define(version: 2019_11_23_012029) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_groups_on_name", unique: true
     t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "message_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_likes_on_message_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -119,8 +129,10 @@ ActiveRecord::Schema.define(version: 2019_11_23_012029) do
   add_foreign_key "counts", "groups"
   add_foreign_key "counts", "users"
   add_foreign_key "good_evaluations", "users"
-  add_foreign_key "good_evaluations", "users", column: "evaluate_user_id"
+  add_foreign_key "good_evaluations", "users", column: "evaluate_id"
   add_foreign_key "groups", "users"
+  add_foreign_key "likes", "messages"
+  add_foreign_key "likes", "users"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
   add_foreign_key "scores", "groups"
