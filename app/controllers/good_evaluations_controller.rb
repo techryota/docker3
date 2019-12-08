@@ -7,16 +7,13 @@ class GoodEvaluationsController < ApplicationController
 
   def create
     @good_evaluation = @user.good_evaluations.new(good_evaluation_params)
-    if @good_evaluation.save
-      render_to root_path
-    else
-      render_to root_path
-    end
+    @good_evaluation.save
+    redirect_to root_path
   end
 
   private
   def good_evaluation_params
-    params.require(:good_evaluation).permit(:user_id).merge(evaluate_user_id: current_user.id)
+    params.require(:good_evaluation).permit(:good).merge(user_id: params[:user_id], evaluate_id: current_user.id)
   end
 
   def set_user

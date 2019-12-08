@@ -3,7 +3,7 @@ class Group < ApplicationRecord
   has_many :messages
   has_many :counts
   has_many :scores
-  # belongs_to :calendar
+
   validates :name, presence: true, uniqueness: true
 
   def show_last_message
