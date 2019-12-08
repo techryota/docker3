@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @good_evaluation = GoodEvaluation.new
   end
 
   def update

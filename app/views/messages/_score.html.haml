@@ -1,0 +1,171 @@
+.form-view
+  - if @scores.present?
+    - @scores.each do |score|
+      %table.table-score
+        %tr
+          %th 
+          %th 1
+          %th 2
+          %th 3
+          %th 4
+          %th 5
+          %th 6
+          %th 7
+          %th 8
+          %th 9
+          %th 10
+          %th 11
+          %th 12
+          %th R
+          %th H
+          %th E
+        %tr
+          %td 
+            = score.first_team
+          %td 
+            = score.first1
+          %td 
+            = score.first2
+          %td 
+            = score.first3
+          %td 
+            = score.first4
+          %td 
+            = score.first5
+          %td 
+            = score.first6
+          %td 
+            = score.first7
+          %td 
+            = score.first8
+          %td 
+            = score.first9
+          %td 
+            = score.first10
+          %td 
+            = score.first11
+          %td 
+            = score.first12
+          %td 
+            = (score.first1.to_i + score.first2.to_i + score.first3.to_i + score.first4.to_i + score.first5.to_i + score.first6.to_i + score.first7.to_i + score.first8.to_i + score.first9.to_i + score.first10.to_i + score.first11.to_i + score.first12.to_i).to_s
+          %td 
+            = score.first_hit
+          %td
+            = score.first_error
+        %tr
+          %td 
+            = score.second_team
+          %td 
+            = score.second1
+          %td 
+            = score.second2
+          %td 
+            = score.second3
+          %td 
+            = score.second4
+          %td 
+            = score.second5
+          %td 
+            = score.second6
+          %td 
+            = score.second7
+          %td 
+            = score.second8
+          %td 
+            = score.second9
+          %td 
+            = score.second10
+          %td 
+            = score.second11
+          %td 
+            = score.second12
+          %td 
+            = (score.second1.to_i + score.second2.to_i + score.second3.to_i + score.second4.to_i + score.second5.to_i + score.second6.to_i + score.second7.to_i + score.second8.to_i + score.second9.to_i + score.second10.to_i + score.second11.to_i + score.second12.to_i).to_s
+          %td 
+            = score.second_hit
+          %td 
+            = score.second_error
+  - else
+    %table.table-score
+      %tr
+        %th 
+        %th 1
+        %th 2
+        %th 3
+        %th 4
+        %th 5
+        %th 6
+        %th 7
+        %th 8
+        %th 9
+        %th 10
+        %th 11
+        %th 12
+        %th R
+        %th H
+        %th E
+      %tr
+        %td 
+
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td
+          
+      %tr
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+          
+        %td 
+
+        %td 
