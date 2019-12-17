@@ -4,7 +4,7 @@ class Group < ApplicationRecord
   has_many :counts
   has_many :scores
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
 
   def show_last_message
     if (last_message = messages.last).present?
