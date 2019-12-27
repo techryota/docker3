@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: docker3_production
-  username: root
-  password:
+  database: app_production
+  username: app
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
