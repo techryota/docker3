@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: app_production
+  database: docker3_production
   username: root
   password:
