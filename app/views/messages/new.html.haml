@@ -81,7 +81,7 @@
               = f.number_field :second_hit, class: "input-team", min: "0", value: score.second_hit
             %td 
               = f.number_field :second_error, class: "input-team", min: "0", value: score.second_error
-          = f.submit 'Send', class: 'form__submit'
+          = f.submit 'スコアの更新', class: 'form__submit'
   - else
     = form_for [@group, @score] do |f|
       %table.table-score
@@ -163,7 +163,7 @@
             = f.number_field :second_hit, class: "input-team", min: "0"
           %td 
             = f.number_field :second_error, class: "input-team", min: "0"
-        = f.submit 'Send', class: 'form__submit'
+        = f.submit 'スコアの更新', class: 'form__submit'
 
 .form-count
   = form_for [@group, @count] do |f|
@@ -197,8 +197,8 @@
     = f.label :auto3 ,"auto3"
     = f.check_box :auto3, {class: "auto"}
 
-    = f.text_area :report
-    = f.submit 'Send', class: 'form__submit'
+    = f.text_area :report, placeholder: '速報の詳細を入力できます'
+    = f.submit 'カウントの更新', class: 'form__submit'
 
 
 .count-view
@@ -269,16 +269,15 @@
   .header-new
     .left-header-new
       .left-header__title--new
+        グループ名：
         = @group.name
-      %ul.left-header__members--new
-        作成者：
-        = @user.name
-    =link_to 'Edit', edit_group_path(@group), class: "right-header right-header__button", data: {turbolinks: false}
+    =link_to 'グループ名の編集', edit_group_path(@group), class: "right-header right-header__button", data: {turbolinks: false}
+    =link_to "一覧に戻る", root_path
   .messages-new
     = render @messages
   .form-new
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form-new__message--new', placeholder: 'type a message'
+      = f.text_field :content, class: 'form-new__message--new', placeholder: 'コメントを入力できます'
       .form-new__mask--new
         = f.label :image, class: 'form-new__mask__image--new' do
           = fa_icon 'picture-o', class: 'icon'

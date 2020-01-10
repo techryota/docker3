@@ -86,5 +86,6 @@
     .auto-emptiness
     .auto-emptiness
 
-= link_to '更新する', new_group_message_path(@group)
+- if @user.name == current_user.name
+  = link_to '更新する', new_group_message_path(@group)
 = link_to '一覧に戻る', root_path

@@ -1,24 +1,14 @@
 class MessagesController < ApplicationController
-  before_action :set_group
+  before_action :set_group, only: [:index, :new]
+  before_action :set_index, only: :index
+  before_action :set_new, only: :new
 
   def index
-    @message = Message.new
-    @messages = @group.messages.includes(:user)
-    @count = Count.new
-    @counts = Count.where(group_id: params[:group_id], user_id: current_user.id).order(updated_at: 'desc').limit(1)
-    @score = Score.new
-    @scores = Score.where(group_id: params[:group_id], user_id: current_user.id).order(updated_at: 'desc').limit(1)
-    @user = User.find(@group.user_id)
+    
   end
 
   def new
-    @message = Message.new
-    @messages = @group.messages.includes(:user)
-    @count = Count.new
-    @counts = Count.where(group_id: params[:group_id], user_id: current_user.id).order(updated_at: 'desc').limit(1)
-    @score = Score.new
-    @scores = Score.where(group_id: params[:group_id], user_id: current_user.id).order(updated_at: 'desc').limit(1)
-    @user = User.find(@group.user_id)
+
   end
 
   def create
@@ -37,5 +27,20 @@ class MessagesController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+    @user = User.find(@group.user_id)
+    @message = Message.new
+    @messages = @group.messages.includes(:user)
+    @count = Count.new
+    @counts = Count.where(group_id: params[:group_id], user_id: @user.id).order(updated_at: 'desc').limit(1)
+    @score = Score.new
+    @scores = Score.where(group_id: params[:group_id], user_id: @user.id).order(updated_at: 'desc').limit(1)
+  end
+
+  def set_index
+    redirect_to new_group_message_path if @user.name == current_user.name
+  end
+
+  def set_new
+    redirect_to group_messages_path unless @user.name == current_user.name
   end
 end

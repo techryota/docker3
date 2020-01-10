@@ -127,6 +127,10 @@
   color: white;
 }
 
+th {
+  width: 100px;
+}
+
 .input-score {
   width: 30px;
 }
@@ -203,6 +207,7 @@
       float: left;
       height: 50px;
       padding-left: 10px;
+      width: 88%;
     }
     &__mask--new {
       background-color: $white;
