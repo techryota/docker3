@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_group, only: [:index, :new]
+  before_action :set_group
   before_action :set_index, only: :index
   before_action :set_new, only: :new
 
