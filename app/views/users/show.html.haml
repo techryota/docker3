@@ -1,4 +1,11 @@
-= @user.name
-= form_for [@user, @good_evaluation] do |f|
-  = f.check_box :good
-  = f.submit 'Send'
+.user-show-page
+  %ul
+    %li
+      作成者：
+      = @user.name
+    %li
+      いいね：
+      = @good_count
+  = form_for [@user, @good_evaluation] do |f|
+    = f.check_box :good
+    = f.submit 'Send'

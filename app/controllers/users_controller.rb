@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @good_count = GoodEvaluation.where(user_id: @user.id).count
     @good_evaluation = GoodEvaluation.new
   end
 
