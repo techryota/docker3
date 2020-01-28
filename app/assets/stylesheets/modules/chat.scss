@@ -110,18 +110,12 @@
   }
 }
 
-.form-count {
-  padding-top: 120px;
-}
-
 .top-content {
   height: 100px;
 }
 
 .table-score {
   height: 100px;
-  position: fixed;
-  z-index: 1;
   width: 100%;
   background-color: #006400;
   color: white;
@@ -142,7 +136,7 @@ th {
 .chat-new {
   width: 100%;
   .header-new {
-    height: 100px;
+    height: 50px;
     padding: 0 40px;
     .left-header-new {
       float: left;
