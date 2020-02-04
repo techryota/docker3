@@ -279,7 +279,7 @@
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'form-new__message--new', placeholder: 'コメントを入力できます'
       .form-new__mask--new
-        = f.label :image, class: 'form-new__mask__image--new' do
+        = f.label :image, class: 'form-new__mask--new__image--new' do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form-new__submit--new'

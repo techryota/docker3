@@ -32,7 +32,7 @@ $(function () {
             <p class="lower-message__content">
               ${message.content}
             </p>
-            ${image}
+              ${image}
           </div>
         </div>`
     return html;

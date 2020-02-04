@@ -92,6 +92,9 @@
       &__image {
         font-size: 20px;
         line-height: 50px;
+        .fa {
+          cursor: pointer;
+        }
       }
       .hidden {
         display: none;
@@ -106,6 +109,7 @@
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
+      cursor: pointer;
     }
   }
 }
@@ -208,9 +212,16 @@ th {
       float: left;
       height: 50px;
       padding-right: 10px;
+      position: relative;
       &__image--new {
         font-size: 20px;
         line-height: 50px;
+        .fa-picture-o {
+          position: absolute;
+          top: 15px;
+          right: 10px;
+          cursor: pointer;
+        }
       }
       .hidden {
         display: none;
@@ -225,6 +236,7 @@ th {
       height: 50px;
       margin-left: 15px;
       padding: 0 30px;
+      cursor: pointer;
     }
   }
 }
