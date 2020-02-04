@@ -273,7 +273,7 @@
         = @group.name
     =link_to 'グループ名の編集', edit_group_path(@group), class: "right-header right-header__button", data: {turbolinks: false}
     =link_to "一覧に戻る", root_path
-  .messages-new
+  .messages-new.messages
     = render @messages
   .form-new
     = form_for [@group, @message] do |f|
@@ -282,4 +282,4 @@
         = f.label :image, class: 'form-new__mask--new__image--new' do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'form-new__submit--new'
+      = f.submit 'Send', class: 'form-new__submit--new form__submit'

@@ -38,22 +38,6 @@ $(function () {
     return html;
   };
 
-//   function buildCountHTML(count) {
-//     val aaa =`<div class="count-view">
-// <div class="ball"></div>
-// <div class="ball"></div>
-// <div class="ball-emptiness"></div>
-// <div class="ball-emptiness"></div>
-// <div class="strike-emptiness"></div>
-// <div class="strike-emptiness"></div>
-// <div class="strike-emptiness"></div>
-// <div class="auto"></div>
-// <div class="auto-emptiness"></div>
-// <div class="auto-emptiness"></div>
-// </div>`
-//     return aaa;
-//   }
-
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -77,30 +61,6 @@ $(function () {
       alert('エラー');
     })
   })
-
-  // $('#new_count').on('submit', function(e){
-  //   e.preventDefault();
-  //   var formData = new FormData(this);
-  //   var url = $(this).attr('action');
-  //   $.ajax({
-  //     url: url,
-  //     type: "POST",
-  //     data: formData,
-  //     dataType: 'json',
-  //     processData: false,
-  //     contentType: false
-  //   })
-  //   .done(function(){
-  //     var aaa = buildCountHTML(count);
-  //     $('.messages').append(aaa);
-  //     $('#new_message')[0].reset();
-  //     $(".form__submit").removeAttr("disabled");
-  //     $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 'fast');
-  //   })
-  //   .fail(function(){
-  //     alert('エラー');
-  //   })
-  // })
 
 });
 
