@@ -128,4 +128,26 @@ li {
 .show-page {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT8o7NnRkbCHVRhMaJK3-7GShq09V-ki_9WpYszCXd58Xhh_FIm);
   height: 100vh;
+  padding-top: 5px;
+  .group-date {
+    text-align: center;
+    font-size: 30px;
+    background-color: #fff;
+    margin: 0 600px 5px;
+  }
+  .chat-group {
+    text-align: center;
+    a {
+      display: block;
+      font-size: 20px;
+      width: fit-content;
+      background-color: white;
+      margin: 0 auto 5px;
+    }
+  }
+  .back-page {
+    float: right;
+    background-color: white;
+  }
 }
+

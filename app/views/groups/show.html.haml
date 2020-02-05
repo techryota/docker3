@@ -1,8 +1,9 @@
 .show-page
   .group-date
     #{@url}
-  - @groups.each do |group|
-    - if @url.to_s == group.date.to_s
-      = link_to group.name, group_messages_path(group), data: {turbolinks: false}
+  .chat-group
+    - @groups.each do |group|
+      - if @url.to_s == group.date.to_s
+        = link_to group.name, group_messages_path(group)
 
-  =link_to "一覧に戻る", root_path
+  =link_to "一覧に戻る", root_path, class: "back-page"
