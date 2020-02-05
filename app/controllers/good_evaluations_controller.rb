@@ -7,7 +7,13 @@ class GoodEvaluationsController < ApplicationController
 
   def create
     @good_evaluation = @user.good_evaluations.new(good_evaluation_params)
-    @good_evaluation.save
+    @date = GoodEvaluation.where(user_id: @user.id, evaluate_id: current_user.id).last
+    if @date == nil
+      @date = 1
+    else
+      @date = @date.created_at.strftime('%Y/%m/%d')
+    end
+    @good_evaluation.save unless @date == Date.today.to_time.strftime('%Y/%m/%d')
     redirect_to root_path
   end
 
