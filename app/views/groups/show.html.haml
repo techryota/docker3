@@ -1,9 +1,13 @@
 .show-page
   .group-date
-    #{@url}
+    = @url
   .chat-group
     - @groups.each do |group|
-      - if @url.to_s == group.date.to_s
-        = link_to group.name, group_messages_path(group)
-
+      = link_to group.name, group_messages_path(group)
+      .maker
+        作成者：
+        = group.user.name
+      .good-count
+        いいね：
+        = group.user.good_evaluations.count
   =link_to "一覧に戻る", root_path, class: "back-page"

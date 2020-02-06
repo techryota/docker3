@@ -20,7 +20,11 @@ class GroupsController < ApplicationController
 
   def show
     @url = request.path[8..]
-    @groups = Group.all
+    @groups = Group.where(date: @url)
+    # @aaa = []
+    # @groups.each do |group|
+    #   @aaa << group.user.good_evaluations.count
+    # end
   end
 
   def edit
