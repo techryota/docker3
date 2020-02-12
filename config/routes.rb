@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   end
   resources :groups, only: [:index, :new, :create, :show, :edit, :update] do
     resources :messages, only: [:index, :new, :create]
+    namespace :api do
+      resources :messages, only: [:index, :new, :create], defaults: { format: 'json' }
+    end
     resources :counts, only: [:index, :create]
     resources :scores, only: [:index, :create]
   end

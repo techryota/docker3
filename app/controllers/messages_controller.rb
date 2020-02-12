@@ -32,6 +32,7 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
     @count = Count.new
     @counts = Count.where(group_id: params[:group_id], user_id: @user.id).order(updated_at: 'desc').limit(1)
+    @count_last = Count.where(group_id: params[:group_id], user_id: @user.id).last
     @score = Score.new
     @scores = Score.where(group_id: params[:group_id], user_id: @user.id).order(updated_at: 'desc').limit(1)
   end

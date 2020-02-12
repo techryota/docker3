@@ -168,39 +168,105 @@
 .form-count
   = form_for [@group, @count] do |f|
     = f.label :ball1 ,"ball1"
-    = f.check_box :ball1, {class: "ball"}
+    - if @count_last != nil
+      - if @count_last.ball1 == 0
+        = f.check_box :ball1, {class: "ball"}
+      - else
+        = f.check_box :ball1, {class: "ball", checked: true}
+    - else
+      = f.check_box :ball1, {class: "ball"}
 
     = f.label :ball2 ,"ball2"
-    = f.check_box :ball2, {class: "ball"}
+    - if @count_last != nil
+      - if @count_last.ball2 == 0
+        = f.check_box :ball2, {class: "ball"}
+      - else
+        = f.check_box :ball2, {class: "ball", checked: true}
+    - else
+      = f.check_box :ball2, {class: "ball"}
 
     = f.label :ball3 ,"ball3"
-    = f.check_box :ball3, {class: "ball"}
+    - if @count_last != nil
+      - if @count_last.ball3 == 0
+        = f.check_box :ball3, {class: "ball"}
+      - else
+        = f.check_box :ball3, {class: "ball", checked: true}
+    - else
+      = f.check_box :ball3, {class: "ball"}
 
     = f.label :ball4 ,"ball4"
-    = f.check_box :ball4, {class: "ball"}
+    - if @count_last != nil
+      - if @count_last.ball4 == 0
+        = f.check_box :ball4, {class: "ball"}
+      - else
+        = f.check_box :ball4, {class: "ball", checked: true}
+    - else
+      = f.check_box :ball4, {class: "ball"}
 
     = f.label :strike1 ,"strike1"
-    = f.check_box :strike1, {class: "strike"}
+    - if @count_last != nil
+      - if @count_last.strike1 == 0
+        = f.check_box :strike1, {class: "ball"}
+      - else
+        = f.check_box :strike1, {class: "ball", checked: true}
+    - else
+      = f.check_box :strike1, {class: "ball"}
 
     = f.label :strike2 ,"strike2"
-    = f.check_box :strike2, {class: "strike"}
+    - if @count_last != nil
+      - if @count_last.strike2 == 0
+        = f.check_box :strike2, {class: "ball"}
+      - else
+        = f.check_box :strike2, {class: "ball", checked: true}
+    - else
+      = f.check_box :strike2, {class: "ball"}
 
     = f.label :strike3 ,"strike3"
-    = f.check_box :strike3, {class: "strike"}
+    - if @count_last != nil
+      - if @count_last.strike3 == 0
+        = f.check_box :strike3, {class: "ball"}
+      - else
+        = f.check_box :strike3, {class: "ball", checked: true}
+    - else
+      = f.check_box :strike3, {class: "ball"}
 
     = f.label :auto1 ,"auto1"
-    = f.check_box :auto1, {class: "auto"}
+    - if @count_last != nil
+      - if @count_last.auto1 == 0
+        = f.check_box :auto1, {class: "ball"}
+      - else
+        = f.check_box :auto1, {class: "ball", checked: true}
+    - else
+      = f.check_box :auto1, {class: "ball"}
 
     = f.label :auto2 ,"auto2"
-    = f.check_box :auto2, {class: "auto"}
+    - if @count_last != nil
+      - if @count_last.auto2 == 0
+        = f.check_box :auto2, {class: "ball"}
+      - else
+        = f.check_box :auto2, {class: "ball", checked: true}
+    - else
+      = f.check_box :auto2, {class: "ball"}
 
     = f.label :auto3 ,"auto3"
-    = f.check_box :auto3, {class: "auto"}
+    - if @count_last != nil
+      - if @count_last.auto3 == 0
+        = f.check_box :auto3, {class: "ball"}
+      - else
+        = f.check_box :auto3, {class: "ball", checked: true}
+    - else
+      = f.check_box :auto3, {class: "ball"}
+    
 
     = f.text_area :report, placeholder: '速報の詳細を入力できます'
     = f.submit 'カウントの更新', class: 'form__submit'
 
-
+.form-count
+  = form_for [@group, @count] do |f|
+    = f.label :ball1 ,"ball1"
+    = f.check_box :ball1, {class: "ball"}
+    = f.submit 'カウントの更新', class: 'form__submit'
+    
 .count-view
   - @counts.each do |count|
     - if count.ball1 == 0
