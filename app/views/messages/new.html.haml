@@ -261,11 +261,6 @@
     = f.text_area :report, placeholder: '速報の詳細を入力できます'
     = f.submit 'カウントの更新', class: 'form__submit'
 
-.form-count
-  = form_for [@group, @count] do |f|
-    = f.label :ball1 ,"ball1"
-    = f.check_box :ball1, {class: "ball"}
-    = f.submit 'カウントの更新', class: 'form__submit'
     
 .count-view
   - @counts.each do |count|
